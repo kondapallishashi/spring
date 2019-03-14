@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- START CICOLLECTION QUESTIONS STRING LIST-->
+   <bean id="questions" class="com.insync.spring.beans.CICollectionQuestions">
+   <constructor-arg value="1"></constructor-arg>
+   <constructor-arg value="What is Java?"></constructor-arg>
+   <constructor-arg>
+   <list>
+   <value>Java is an Object Oriented Programming Language</value>
+   <value>Java is Coffee</value>
+   <value>Java is a Platform</value>
+   <value>Java is an island in Indonesia</value>
+   </list>
+   </constructor-arg>
+   </bean>
+   <!-- END CICOLLECTION QUESTIONS STRING LIST-->
+   
+   <!-- START CICOLLECTION NON STRING LIST -->
+   <bean id="answer1" class="com.insync.spring.beans.CINonStringCollectionAnswers">
+   <constructor-arg value="1"></constructor-arg>
+   <constructor-arg value="Java is a programming language"></constructor-arg>
+   <constructor-arg value="sasi"></constructor-arg>
+   </bean>
+   
+   <bean id="answer2" class="com.insync.spring.beans.CINonStringCollectionAnswers">
+   <constructor-arg value="2"></constructor-arg>
+   <constructor-arg value="Java is a platform"></constructor-arg>
+   <constructor-arg value="kondapalli"></constructor-arg>
+   </bean>
+   
+   <bean id="question" class="com.insync.spring.beans.CINonStringCollectionQuestions">
+   <constructor-arg value="111"></constructor-arg>
+   <constructor-arg value="What is Java"></constructor-arg>
+   <constructor-arg>
+   <list>
+   <ref bean="answer1"></ref>
+   <ref bean="answer2"></ref>
+   </list>
+   </constructor-arg>
+   </bean>
+   <!-- END CICOLLECTION NON STRING LIST -->
+   
+   <!-- START CI COLLECTION MAP -->
+   <!-- Applicable to CIMapQuestions.java,CIMapQuestionsDemo.java classes -->
+   <bean id="questionsmap" class="com.insync.spring.beans.CIMapQuestions">
+   <constructor-arg value="11"></constructor-arg>
+   <constructor-arg value="What is Java"></constructor-arg>
+   <constructor-arg>
+   <map>
+   <entry key="Java is a programming language" value="sasi"></entry>
+   <entry key="Java is a platform" value="kondapalli"></entry>
+   <entry key="Java is an island" value="ksr"></entry>
+   
+   </map>
+   </constructor-arg>
+   
+   </bean>
+   <!-- START CI COLLECTION MAP -->
+   
+   </beans>

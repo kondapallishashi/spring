@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="employee" class="com.insync.spring.beans.Employee"></bean>
+	<bean id="employeeObj" class="com.insync.spring.beans.Employee">
+		<!-- If type is not mentioned, by default the string type constructor will 
+			be invoked -->
+		<constructor-arg value="10" type="int"></constructor-arg>
+		<!-- <constructor-arg value="10"></constructor-arg> -->
+	</bean>
+
+	<!-- Use the below configuration to inject both id and name into employee 
+		class -->
+	<!-- <bean id="employeeObj" class="com.insync.spring.beans.Employee"> <constructor-arg 
+		value="10" type="int"></constructor-arg> <constructor-arg value="sasi" type="String"></constructor-arg> 
+		</bean> -->
+
+	<!-- This configuration is related to EmployeeWithAddress.java and Address.java 
+		files -->
+	<!-- This demonstrates the constructor injection when there is a HAS-A relation 
+		between classes -->
+	<!-- First create the dependent object Address -->
+	<bean id="address" class="com.insync.spring.beans.Address">
+		<constructor-arg value="102,Bayshoreplace Apts"></constructor-arg>
+		<constructor-arg value="Hydernagar"></constructor-arg>
+		<constructor-arg value="Telangana"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+	<!-- Now create the class with HAS-A relation EmployeeWithAddress -->
+	<bean id="employeeWithAddress" class="com.insync.spring.beans.EmployeeWithAddress">
+		<constructor-arg value="150" type="int"></constructor-arg>
+		<constructor-arg value="sasi"></constructor-arg>
+		<constructor-arg>
+			<ref bean="address"></ref>
+		</constructor-arg>
+	</bean>
+</beans>
