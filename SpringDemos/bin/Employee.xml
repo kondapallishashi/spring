@@ -37,4 +37,22 @@
 			<ref bean="address"></ref>
 		</constructor-arg>
 	</bean>
+	
+	<!-- THIS CONFIGURATION IS FOR BEANINHERITANCE -->
+	<bean id="employeeSuperObj" class="com.insync.spring.beans.Employee">
+	<constructor-arg value="150"></constructor-arg>
+	<constructor-arg value="Sasidhar Kondapalli"></constructor-arg>
+	</bean>
+	
+	<bean id="addressObj" class="com.insync.spring.beans.Address">
+	<constructor-arg value="102,Bayshoreplace Apts"></constructor-arg>
+		<constructor-arg value="Hydernagar"></constructor-arg>
+		<constructor-arg value="Telangana"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+	
+	<bean id="employeeSubObj" class="com.insync.spring.beans.EmployeeWithAddress" parent="employeeSuperObj">
+	<constructor-arg ref="addressObj">
+	</constructor-arg>
+	</bean>
 </beans>

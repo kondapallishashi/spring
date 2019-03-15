@@ -59,6 +59,44 @@
    </constructor-arg>
    
    </bean>
-   <!-- START CI COLLECTION MAP -->
+   <!-- END CI COLLECTION MAP -->
+   
+   <!-- START CI NON STRING MAP COLLECTION-->
+   <bean id="answerObj1" class="com.insync.spring.beans.CINonStringMapAnswer">
+   <constructor-arg value="1"></constructor-arg>
+   <constructor-arg value="Java is a programming language"></constructor-arg>
+   <constructor-arg value="03/15/2019"></constructor-arg>
+   </bean>
+   
+    <bean id="answerObj2" class="com.insync.spring.beans.CINonStringMapAnswer">
+   <constructor-arg value="2"></constructor-arg>
+   <constructor-arg value="Java is a platform"></constructor-arg>
+   <constructor-arg value="03/15/2019"></constructor-arg>
+   </bean>
+   
+   <bean id="user1" class="com.insync.spring.beans.CINonStringMapUser">
+   <constructor-arg value="1"></constructor-arg>
+   <constructor-arg value="Sasi"></constructor-arg>
+   <constructor-arg value="kondapallishashi@gmail.com"></constructor-arg>
+   </bean>
+   
+   <bean id="user2" class="com.insync.spring.beans.CINonStringMapUser">
+   <constructor-arg value="2"></constructor-arg>
+   <constructor-arg value="kondapalli"></constructor-arg>
+   <constructor-arg value="sasidhar.kondapalli@gmail.com"></constructor-arg>
+   </bean>
+   
+   <bean id="questionObj" class="com.insync.spring.beans.CINonStringMapQuestions">
+   <constructor-arg value="1"></constructor-arg>
+   <constructor-arg value="What is Java"></constructor-arg>
+   <constructor-arg>
+   <map>
+   <entry key-ref="answerObj1" value-ref="user1"></entry>
+   <entry key-ref="answerObj2" value-ref="user2"></entry>
+   </map>
+   </constructor-arg>
+   </bean>
+   
+   <!-- END CI NON STRING MAP COLLECTION-->
    
    </beans>

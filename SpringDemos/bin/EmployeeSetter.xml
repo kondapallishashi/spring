@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="employee" class="com.insync.spring.beans.di.Employee">
+   <property name="id"><value>150</value></property>
+   <property name="name"><value>Sasidhar Kondapalli</value></property>
+   <property name="city"><value>Hyderabad</value></property>
+   </bean>
+   
+   <!-- Dependency Injection using Objects -->
+   <bean id="address" class="com.insync.spring.beans.di.Address">
+   		<property name="street" value="102, Bayshore Place"></property>
+   		<property name="city" value="Hyderabad"></property>
+   		<property name="state" value="Telangana"></property>
+   		<property name="country" value="India"></property>
+   </bean>
+   
+   <bean id="employeeWithAddress" class="com.insync.spring.beans.di.EmployeeWithAddress">
+   <property name="id" value="150"></property>
+   <property name="name" value="Sasidhar Kondapalli"></property>
+   <property name="address" ref="address"></property>
+   </bean>
+   
+   
+   </beans>
