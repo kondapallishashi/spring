@@ -17,10 +17,36 @@
 <!-- COMMENT OUT THE ABOVE SECTION AND UNCOMMENT THE BELOW SECTION TO DEMONSTRATE BYTYPE -->
 <!-- This works when only one bean of the specified  type exists. If more than one bean of the same type
 exist, then the program will throw an error -->
-   <bean id="simpleClass" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>
+<!-- 
+   <bean id="simpleClass" class="com.insync.spring.beans.autowiring.SimpleClass"></bean> -->
    <!-- UNCOMMENT THE BELOW LINE TO SEE THE ERROR WHEN THERE ARE MORE THAN ONE BEAN OF THE SAME TYPE -->
    <!-- <bean id="simpleClass1" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>-->
+   <!-- 
    <bean id="dependencyClass" class="com.insync.spring.beans.autowiring.DependencyClass" autowire="byName"></bean>
+   -->
    
-   
+   <!-- 
+   <bean id="simpleClass" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>
+   <bean id="dependencyClass" class="com.insync.spring.beans.autowiring.DependencyClass" autowire="constructor"></bean>
+    -->
+   <bean id="employeeContact" class="com.insync.spring.beans.autowiring.EmployeeContact">
+   <constructor-arg value="99496"></constructor-arg>
+   <constructor-arg value="kondapallishashi@gmail.com"></constructor-arg>
+   </bean>
+   <bean id="employeeAddress" class="com.insync.spring.beans.autowiring.EmployeeAddress">
+   <constructor-arg value="Bayshore Place"></constructor-arg>
+   <constructor-arg value="Hydernagar"></constructor-arg>
+   <constructor-arg value="Hyderabad"></constructor-arg>
+   <constructor-arg value="500049"></constructor-arg>
+   </bean>
+   <bean id="employee" class="com.insync.spring.beans.autowiring.Employee" autowire="constructor">
+   <constructor-arg value="150"></constructor-arg>
+   <constructor-arg value="Delivery Head"></constructor-arg>
+   <constructor-arg>
+   <ref bean="employeeContact"></ref>
+   </constructor-arg>
+   <constructor-arg>
+   <ref bean="employeeAddress"></ref>
+   </constructor-arg>
+   </bean>
    </beans>
