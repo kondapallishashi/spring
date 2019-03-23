@@ -45,5 +45,67 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- DI Using Setter method where Map with Strings is used -->
+	<bean id="questionMap" class="com.insync.spring.beans.di.SIMapQuestion">
+	<property name="id" value="1"></property>
+	<property name="name" value="What is Java?"></property>
+	<property name="answers">
+	<map>
+	<entry key="Java is a programming language" value="sasidhar"></entry>
+	<entry key="Java is a platform" value="Kondapalli S"></entry>
+	</map>
+	</property>
+	</bean>
+	
+<!-- DI Using Setter method where Non String Map Collection objects are involved -->
+<bean id="answerMapObj1" class="com.insync.spring.beans.di.SIMapNonStringAnswer">
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="Java is a programming Language"></constructor-arg>
+<constructor-arg value="22/03/2019"></constructor-arg>
+<!-- <property name="id" value="1"></property>
+<property name="answer" value="Java is a programming language"></property>
+<property name="postedDate" value="22/03/2019"></property>-->
+</bean>
 
+<bean id="answerMapObj2" class="com.insync.spring.beans.di.SIMapNonStringAnswer">
+<constructor-arg value="2"></constructor-arg>
+<constructor-arg value="Java is a platform"></constructor-arg>
+<constructor-arg value="22/03/2019"></constructor-arg>
+
+<!-- 
+<property name="id" value="2"></property>
+<property name="answer" value="Java is a platform"></property>
+<property name="postedDate" value="22/03/2019"></property>-->
+</bean>
+
+<bean id="userMapObj1" class="com.insync.spring.beans.di.SIMapNonStringUser">  
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="Sasi"></constructor-arg>
+<constructor-arg value="kondapallishashi@gmail.com"></constructor-arg>
+<!-- 
+<property name="id" value="1"></property>  
+<property name="name" value="Sasi"></property>  
+<property name="email" value="kondapallishashi@gmail.com"></property>-->  
+</bean>  
+<bean id="userMapObj2" class="com.insync.spring.beans.di.SIMapNonStringUser">  
+<constructor-arg value="2"></constructor-arg>
+<constructor-arg value="ksr"></constructor-arg>
+<constructor-arg value="sasidhar.kondapalli@gmail.com"></constructor-arg>
+<!-- 
+<property name="id" value="2"></property>  
+<property name="name" value="ksr"></property>  
+<property name="email" value="sasidhar.kondapalli@gmail.com"></property>-->  
+</bean>  
+
+<bean id="questionMapNonString" class="com.insync.spring.beans.di.SIMapNonStringQuestion">  
+<property name="id" value="1"></property>  
+<property name="name" value="What is Java?"></property>  
+<property name="answers">  
+<map>  
+<entry key-ref="answerMapObj1" value-ref="userMapObj1"></entry>  
+<entry key-ref="answerMapObj2" value-ref="userMapObj2"></entry>  
+</map>  
+</property>  
+</bean>  
 </beans>

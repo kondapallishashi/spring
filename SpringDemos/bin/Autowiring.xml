@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- COMMENT THE BELOW SECTION AND UNCOMMENT THE BYTYPE SECTION -->
+   <!-- This section is for demonstrating Autowiring byName -->
+   <!-- You can have multiple beans of the same type but the bean with id same as reference is injected and not the others -->
+   <!-- 
+   <bean id="simpleClass" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>
+   <bean id="simpleClass1" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>
+   <bean id="dependencyClass" class="com.insync.spring.beans.autowiring.DependencyClass" autowire="byName"></bean>
+    -->
+
+<!-- This section is for demonstrating Autowiring byType -->
+<!-- COMMENT OUT THE ABOVE SECTION AND UNCOMMENT THE BELOW SECTION TO DEMONSTRATE BYTYPE -->
+<!-- This works when only one bean of the specified  type exists. If more than one bean of the same type
+exist, then the program will throw an error -->
+   <bean id="simpleClass" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>
+   <!-- UNCOMMENT THE BELOW LINE TO SEE THE ERROR WHEN THERE ARE MORE THAN ONE BEAN OF THE SAME TYPE -->
+   <!-- <bean id="simpleClass1" class="com.insync.spring.beans.autowiring.SimpleClass"></bean>-->
+   <bean id="dependencyClass" class="com.insync.spring.beans.autowiring.DependencyClass" autowire="byName"></bean>
+   
+   
+   </beans>
