@@ -5,4 +5,7 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
    <bean id="factoryMethod" class="com.insync.spring.beans.factory.FactoryMethod" factory-method="getFactoryMethod"></bean>
    <bean id="printableClass" class="com.insync.spring.beans.factory.PrintableFactory" factory-method="getPrintableClass"></bean>
+   
+   <bean id="pfactory" class="com.insync.spring.beans.factory.PrintableFactory"></bean>
+   <bean id="printableFactory" class="com.insync.spring.beans.factory.PrintableFactory" factory-method="getPrintableClassNonStatic" factory-bean="pfactory"></bean>
    </beans>

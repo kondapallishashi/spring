@@ -1,0 +1,1 @@
+UPDATE employees SET firstname="sasi", lastname="",age="" WHERE id="";
