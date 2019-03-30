@@ -25,5 +25,10 @@
 <bean id="employeeDaoRs" class="com.insync.spring.beans.jdbc.EmployeeDaoRecordExtractor">
 <property name="jdbcTemplate" ref="jdbcTemplate"></property>
 </bean>
+
+<!-- This configuration is applicable for Record Mapper -->
+<bean id="employeeDaoRm" class="com.insync.spring.beans.jdbc.EmployeeDaoRowMapper">
+<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+</bean>
    
    </beans>
