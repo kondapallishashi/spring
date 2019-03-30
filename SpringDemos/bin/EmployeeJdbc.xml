@@ -21,5 +21,9 @@
 <bean id="employeeDaoPs" class="com.insync.spring.beans.jdbc.EmployeeDaoPs">  
 <property name="jdbcTemplate" ref="jdbcTemplate"></property>  
 </bean>
+
+<bean id="employeeDaoRs" class="com.insync.spring.beans.jdbc.EmployeeDaoRecordExtractor">
+<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+</bean>
    
    </beans>

@@ -60,4 +60,10 @@ public class Employee {
 		public void setAge(int age) {
 			this.age=age;
 		}
+		
+		//This method is written to support ResultSet Extractor method.
+		//This method is added after the initial examples.
+		public String displayEmployeeDetails() {
+			return "Employee Details: \nID: "+id+"\nFirst Name: "+firstName+"\nLast Name: "+lastName+"\nAge: "+age;
+		}
 }
