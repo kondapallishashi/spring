@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+          
+          <bean id="obj" class="com.insync.spring.beans.Demo_Custom_Init" init-method="myInit" destroy-method="destroy"></bean>
+          <bean id="obj_Initializing" class="com.insync.spring.beans.Demo_InitializingBean"/>
+          <bean id="obj_Disposable" class="com.insync.spring.beans.Demo_DisposableBean"/>
+          <bean id="obj_ContextAware" class="com.insync.spring.contextawarebean.Demo_ContextAwareBean" />
+          
+          <bean id="beanPostProcessor" class="com.insync.spring.postprocessor.Demo_BeanPostProcessor"/>
+</beans> 

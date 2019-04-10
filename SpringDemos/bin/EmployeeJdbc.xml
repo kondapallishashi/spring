@@ -30,5 +30,16 @@
 <bean id="employeeDaoRm" class="com.insync.spring.beans.jdbc.EmployeeDaoRowMapper">
 <property name="jdbcTemplate" ref="jdbcTemplate"></property>
 </bean>
+
+<!-- This configuration is applicable for Named Parameter. -->
+<bean id="namedparameterjdbctemplate"   
+ class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">  
+<constructor-arg ref="datasource"></constructor-arg>  
+</bean> 
    
+   <bean id="employeeDaoNP" class="com.insync.spring.beans.jdbc.EmployeeDaoNamedParameter">
+   <constructor-arg>
+   <ref bean="namedparameterjdbctemplate"></ref>
+   </constructor-arg>
+   </bean>
    </beans>
